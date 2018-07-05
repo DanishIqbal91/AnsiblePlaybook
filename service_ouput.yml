@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars:
+     service_name: service_name
+  tasks:
+     - name: status check
+       command: service  {{ service_name }} status
+       register: find_output
+
+
+     - debug:
+          var: find_output
